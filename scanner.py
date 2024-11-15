@@ -130,6 +130,10 @@ def update_moodle_hashes():
         print("The latest version is already recorded or is not newer.")
 
 
+
+
+
+
 def compare_versions(version1, version2):
     parts1 = [int(part) for part in version1.lstrip('v').split('.')]
     parts2 = [int(part) for part in version2.lstrip('v').split('.')]
