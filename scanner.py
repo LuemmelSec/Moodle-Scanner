@@ -549,12 +549,22 @@ def compare_version_range(moodle_version, affected_version):
     
     return False  # If no range matches, the version is not affected
 
-# Main Function
 
+banner = '''
+___  ___                _ _             _____                                 
+|  \/  |               | | |           /  ___|                                
+| .  . | ___   ___   __| | | ___ ______\ `--.  ___ __ _ _ __  _ __   ___ _ __ 
+| |\/| |/ _ \ / _ \ / _` | |/ _ \______|`--. \/ __/ _` | '_ \| '_ \ / _ \ '__|
+| |  | | (_) | (_) | (_| | |  __/      /\__/ / (_| (_| | | | | | | |  __/ |   
+\_|  |_/\___/ \___/ \__,_|_|\___|      \____/ \___\__,_|_| |_|_| |_|\___|_|       
+ '''
+
+# Main Functionprint(banner)  # Print the ASCII art banner
 if __name__ == "__main__":
+    print(banner)  # Print the ASCII art banner
     import argparse
 
-    parser = argparse.ArgumentParser(description="Moodle Version Scanner")
+    parser = argparse.ArgumentParser(description="Moodle Version and Vulnerability Scanner")
     parser.add_argument("--url", type=str, help="URL of the Moodle site to check versions.")
     parser.add_argument("--update", action="store_true", help="Update local Moodle hashes.")
     parser.add_argument("--vuln", action="store_true", help="Update local Moodle vulns.")
