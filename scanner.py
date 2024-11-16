@@ -237,8 +237,8 @@ def check_moodle_version(url, scan_vulns=False):
     
     
     # Step 2: Identify unique or conflicting versions
-    if len(set(latest_versions)) == 1 and latest_versions[0] is not None:
-        confirmed_version = latest_versions[0]
+    if len(set(latest_versions.values())) == 1 and None not in latest_versions.values():
+        confirmed_version = next(iter(latest_versions.values()))  # Get the first value (version)
         print(f"\033[92mIdentified version matches for all files: {confirmed_version}\033[0m")
         if scan_vulns:
             print("Scanning for vulnerabilities...")
