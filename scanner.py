@@ -315,7 +315,12 @@ def extract_vulnerability_info_from_table(table):
 
 # Function to scrape vulnerabilities from a given page URL
 def scrape_vulnerabilities(page_url):
-    response = requests.get(page_url)
+    # The vulnerabilities page blocks the default python user agent
+    headers = {
+        'User-Agent': 'Moodle-Scanner'
+    }
+    
+    response = requests.get(page_url, headers=headers)
     vulnerabilities = []
     
     if response.status_code == 200:
